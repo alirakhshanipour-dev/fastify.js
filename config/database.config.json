@@ -1,0 +1,24 @@
+{
+    "development": {
+      "username": "alirakhshanipur",
+      "password": "",
+      "database": "fastify",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "test": {
+      "username": "your_username",
+      "password": "your_password",
+      "database": "your_test_database_name",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "production": {
+      "username": "your_username",
+      "password": "your_password",
+      "database": "your_production_database_name",
+      "host": "your_production_host",
+      "dialect": "postgres"
+    }
+  }
+  

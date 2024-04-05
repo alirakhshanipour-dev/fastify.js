@@ -10,8 +10,26 @@ const productInstance = {
 
 const getProductItem = {
     schema: {
+        tags: ['Products'],
+        summary: "this route is for getting one product",
+        params: {
+            type: "object",
+            properties: {
+                id: {
+                    type: "string",
+                    description: "the id of product"
+                }
+            }
+        },
         response: {
-            200: productInstance
+            200: productInstance,
+            404: {
+                type: "object",
+                properties: {
+                    code: { type: "integer" },
+                    message: { type: "string" }
+                }
+            }
         }
     },
     handler: getOneProduct
@@ -19,6 +37,8 @@ const getProductItem = {
 
 const getProductItems = {
     schema: {
+        tags: ['Products'],
+        summary: "this route is for getting all products",
         response: {
             200: {
                 type: 'array',
