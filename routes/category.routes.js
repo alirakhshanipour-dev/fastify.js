@@ -24,6 +24,12 @@ const updateCategorySchema = {
         tags: ["Category"],
         summary: "this route is for update Category",
         security: [{ apiKey: [] }],
+        params: {
+            type: "object",
+            properties: {
+                id: { type: "string" }
+            }
+        },
         body: {
             type: "object",
             properties: {
@@ -66,8 +72,14 @@ const getAllCategorySchema = {
 const deleteCategorySchema = {
     schema: {
         tags: ["Category"],
-        summary: "this route is for delete category",
+        summary: "this route is for delete a category",
         security: [{ apiKey: [] }],
+        params: {
+            type: "object",
+            properties: {
+                id: { type: "string" }
+            }
+        }
     },
     handler: getCategoryHandler,
     preHandler: getUserMiddleware
@@ -75,6 +87,10 @@ const deleteCategorySchema = {
 
 const categoryRoutes = (fastify, options, done) => {
     fastify.post("/create", createCategorySchema)
+    fastify.patch("/update", updateCategorySchema)
+    fastify.get("/list", getAllCategorySchema)
+    fastify.get("/:id", getCategorySchema)
+    fastify.delete("/:id", deleteCategorySchema)
     done()
 }
 
