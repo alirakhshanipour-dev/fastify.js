@@ -11,9 +11,10 @@ export const swaggerOption = {
             version: "1.0.0"
         },
         schema: ['http'],
-        host: "http://localhost:5000",
+        host: "localhost:5000",
         tags: [
-            { name: "Products", description: "admin can write and user can read products" }
+            { name: "Products", description: "admin can write and user can read products" },
+            { name: "User", description: "user can read and write profile" },
         ],
         securityDefinitions: {
             apiKey: {

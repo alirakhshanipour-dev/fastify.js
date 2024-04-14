@@ -14,5 +14,5 @@ export const getOneProduct = (req, reply) => {
 
 
 export const getProducts = (req, reply) => {
-    return reply.send(products)
+    return reply.send({ products, user: req.user })
 }
