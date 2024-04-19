@@ -64,22 +64,3 @@ export const UserDetail = sequelize.define("UserDetail", {
 
 User.hasOne(UserDetail, { as: "profile", foreignKey: "UserId" })
 UserDetail.belongsTo(User)
-
-// Sync the model with the database (force:true will drop the table if it already exists)
-User.sync({ alter: true })
-    .then(() => {
-        console.log("User table created successfully.");
-    })
-    .catch((error) => {
-        console.error("Error creating User table:", error);
-    });
-UserDetail.sync({ alter: true })
-    .then(() => {
-        console.log("User Detail table created successfully.");
-    })
-    .catch((error) => {
-        console.error("Error creating User Detail table:", error);
-    });
-
-
-

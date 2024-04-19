@@ -31,11 +31,6 @@ const indexRoute = {
 
 
 function indexRoutes(fastify, options, done) {
-    // fastify.addHook("onRequest", req => req.jwtVerify())
-    fastify.use((req, res, next) => {
-        console.log("hello middleware1");
-        next()
-    })
     fastify.get("/", indexRoute)
     done()
 }
